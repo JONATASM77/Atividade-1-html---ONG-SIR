@@ -1,0 +1,14 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #fdfafa;
+    margin: 0;
+    padding: 0;
+    color: #6ba96dcb;
+}   
+.cabecalho{
+    background-color: #06e515;
+    color: #1c1b1b;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(17, 17, 17, 0.1);
+}

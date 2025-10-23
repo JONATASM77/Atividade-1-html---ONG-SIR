@@ -1,0 +1,282 @@
+
+:root {
+  /* Paleta de cores (8 cores mínimas) */
+  --color-primary: #2b7a78;
+  --color-primary-light: #3aafa9;
+  --color-secondary: #17252a;
+  --color-accent: #def2f1;
+  --color-background: #f7fafc;
+  --color-surface: #ffffff;
+  --color-text: #222;
+  --color-muted: #6b7280;
+  --color-danger: #e63946;
+
+  /* Sistema tipográfico (5 tamanhos mínimos) */
+  --font-xs: 12px;  /* 12px */
+  --font-sm: 14px; /* 14px */
+  --font-md: 16px;     /* 16px */
+  --font-lg: 20px;  /* 20px */
+  --font-xl: 28px;  /* 28px */
+  --font-xxl:36px; /* 36px */
+
+  /* Sistema de espaçamento modular */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  /* Outros tokens */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+/* ================== ESTILO GLOBAL ================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ================== CABEÇALHO ================== */
+header {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  padding: var(--space-2) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-md);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: var(--font-xl);
+  font-weight: 600;
+}
+
+/* ================== MENU PRINCIPAL ================== */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space-2);
+}
+
+nav a {
+  color: var(--color-surface);
+  text-decoration: none;
+  font-size: var(--font-md);
+  transition: var(--transition);
+}
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+/* ======== MENU MOBILE (HAMBURGUER) ======== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  background: var(--color-surface);
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+  transition: var(--transition);
+}
+
+/* ================== SEÇÃO PRINCIPAL ================== */
+main {
+  max-width: 1200px;
+  margin: var(--space-5) auto;
+  padding: 0 var(--space-2);
+}
+
+/* Cartões (Missão, Visão, Valores) */
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-7);
+}
+
+.cartao {
+  background-color: var(--color-surface);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.cartao:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.cartao h2 {
+  color: var(--color-primary);
+  font-size: var(--font-lg);
+  margin-bottom: var(--space-1);
+}
+
+/* ================== GRID GERAL ================== */
+.grid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: 2fr 1fr;
+}
+
+/* ================== CARDS SECUNDÁRIOS ================== */
+.card {
+  background-color: var(--color-surface);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+/* ================== BOTÕES ================== */
+.button {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  padding: var(--space-1) var(--space-2);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.button:hover {
+  background-color: var(--color-primary-light);
+}
+
+.button:disabled {
+  background-color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+/* ================== FORMULÁRIOS ================== */
+input, textarea, select {
+  width: 100%;
+  padding: var(--space-1);
+  border: 1px solid #ccc;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+  margin-bottom: var(--space-2);
+  transition: var(--transition);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(43, 122, 120, 0.2);
+}
+
+/* ================== COMPONENTES DE FEEDBACK ================== */
+.alert {
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-2);
+  font-size: var(--font-sm);
+}
+
+.alert-success {
+  background-color: #defce6;
+  color: #155724;
+}
+
+.alert-error {
+  background-color: #fdecea;
+  color: #721c24;
+}
+
+/* ================== FOOTER ================== */
+footer {
+  background-color: var(--color-secondary);
+  color: var(--color-surface);
+  text-align: center;
+  padding: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+footer a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ================== BADGES ================== */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-xs);
+  background-color: var(--color-primary-light);
+  color: var(--color-surface);
+}
+
+/*===RESPONSIVIDADE===*/
+/* Breakpoints: 480px, 768px, 992px, 1200px, 1440px */
+
+@media (max-width: 1200px) {
+  .container { max-width: 1000px; }
+}
+
+@media (max-width: 992px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-primary);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: var(--font-lg); }
+  .cartao h2 { font-size: var(--font-md); }
+}
